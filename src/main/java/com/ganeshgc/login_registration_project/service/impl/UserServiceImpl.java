@@ -5,6 +5,7 @@ import com.ganeshgc.login_registration_project.model.User;
 import com.ganeshgc.login_registration_project.repository.UserRepository;
 import com.ganeshgc.login_registration_project.service.UserService;
 import com.ganeshgc.login_registration_project.web.Dto.UserRegistrationDto;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,13 +18,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
-
+@AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-    @Autowired
+
     private UserRepository userRepository;
     @Override
     public UserRegistrationDto saveUser(UserRegistrationDto userRegistrationDto) {
